@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+
+{% block titulo  %}
+Listado de Animales
+{% endblock titulo %}
+
+{% block redireccion  %}
+<a href="/animal/crear">Registrar animal</a>
+{% endblock redireccion %}
+
+{% block contenido %}
+<table class="table table-claro table-striped table-hover table-bordered">
+	<tr>
+		<th>Nombre</th>
+		<th>Peso</th>
+		<th>Tipo</th>
+		<th>Genero</th>		
+		<th>Sector</th>	
+		<th colspan="2">Opciones</th>
+
+	</tr>
+	{% for a in animales %}
+	<tr>
+		<td>{{ a.getNombre() }}</td>
+		<td>{{ a.getPeso() }}</td>
+		<td>{{ a.getTipo().getNombre() }}</td>
+		{% if a.getGenero() == 0 %}
+		<td>Hembra</td>
+		{% else %}
+		<td>Macho</td>
+		{% endif %}		
+		<td>{{ a.getSector().getNombre() }}</td>		
+		<td><a href="eliminar?id={{ a.getId() }}">Eliminar</a></td>
+		<td><a href="editar?id={{ a.getId() }}">Modificar</a></td>
+	</tr>
+	{% endfor %}
+</table>
+<h4>
+	{{ mensaje }}
+</h4>
+{% endblock contenido %}

@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>{%  block titulo %} {% endblock titulo %}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/css/style.css" type="text/css" />
+</head>
+<body>
+<div id="page">
+  <div id="header"> <a href="#" id="logo"><img src="/images/logo.jpg" alt=""/></a>    
+    <h2 style="margin-left: 5%">Usuario:  {{ username }}</h2>    
+    {% block redireccion %} {% endblock redireccion %}
+    <ul id="navigation">      
+      <li id="link1"><a href="/animal/listar">Animales</a></li>
+      <li id="link2"><a href="/tipo/listar">Tipo</a></li>
+      <li id="link3"><a href="/sector/listar">Sector</a></li>
+      <li id="link5"><a href="/usuario/listar">Usuarios</a></li>
+      <li id="link6"><a href="/estadisticas/animalTipo">R. Tipo</a></li>
+      <li id="link7"><a href="/estadisticas/animalFecha">R. Fecha Ingreso</a></li>
+      <li id="link8"><a style="color:red;" href="/logout">C.Sesion</a></li>	
+    </ul>
+    <img src="/images/lion-family.jpg" alt=""/>  
+  </div>
+  <div id="content">
+    <div id="featured">
+      <h2>{% block titulo %} {% endblock titulo %}</h2>          
+    </div>
+  </div>
+  <div style="width: 60%; margin-left: 20%">
+    {% block contenido %}
+			
+    {% endblock contenido %}
+  </div>  
+  <div id="footer">
+    <div> <a href="#" class="logo"><img src="/images/animal-kingdom.jpg" alt=""/></a>
+      <div>
+        <p></p>
+        <span></span> <span></span> </div>
+      <ul class="navigation">
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+      </ul>
+      <ul>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+      </ul>
+      <p>Copyright &copy; - All Rights Reserved | Diego Moreno - Luis Ulloa </p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
